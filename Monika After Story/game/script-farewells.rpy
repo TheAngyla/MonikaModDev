@@ -320,6 +320,21 @@ init 5 python:
 label bye_farewellfornow:
     m 1eka "Farewell for now, [mas_get_player_nickname()]~"
     return 'quit'
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_french",
+            unlocked=True,
+            aff_range=(mas_aff.NORMAL, None)
+        ),
+        code="BYE"
+    )
+
+label bye_french:
+    m 1eka "Au revoir, [mas_get_player_nickname()]!"
+    return 'quit'
 
 init 5 python:
     addEvent(
